@@ -1,5 +1,3 @@
-# andre
-Una pokedex completa
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,51 +9,43 @@ Una pokedex completa
             font-family: Arial, sans-serif;
             padding: 20px;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
+        table {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
             border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <h1>Mi PokeDex</h1>
-    <form id="pokemonForm">
-        <label for="pokemonName">Nombre del Pokémon:</label>
-        <input type="text" id="pokemonName" name="pokemonName" required>
-        <button type="submit">Agregar Pokémon</button>
-    </form>
-    <h2>Listado de Pokémon:</h2>
-    <ul id="pokemonList">
-        <!-- Aquí se mostrarán los Pokémon ingresados -->
-    </ul>
-
-    <script>
-        const form = document.getElementById('pokemonForm');
-        const pokemonList = document.getElementById('pokemonList');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const pokemonName = document.getElementById('pokemonName').value;
-            addPokemonToList(pokemonName);
-            form.reset();
-        });
-
-        function addPokemonToList(name) {
-            const listItem = document.createElement('li');
-            listItem.textContent = name;
-            pokemonList.appendChild(listItem);
-        }
-    </script>
-</body>
-</html>
+    <table>
+        <tr>
+            <th>Número</th>
+            <th>Nombre (Español)</th>
+            <th>Nombre (Japonés)</th>
+        </tr>
+        <tr>
+            <td>0001</td>
+            <td><a href="pokemon.html#bulbasaur">Bulbasaur</a></td>
+            <td>フシギダネ</td>
+        </tr>
+        <tr>
+            <td>0002</td>
+            <td><a href="pokemon.html#ivysaur">Ivysaur</a></td>
+            <td>フシギソウ</td>
+        </tr>
